@@ -12,6 +12,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag testdocker:$(date +%s)
+        HOME_DIR=$PWD
+        chmod -R 777 $HOME_DIR
+        cd $HOME_DIR
+        docker build . -t testdocker
+        docker tag testdocker testdocker:$(date +%s)
         docker ps | grep testdocker
         
