@@ -14,3 +14,4 @@ jobs:
         chmod -R 777 $PWD
         cd $PWD
         ls
+        docker build . -t imagetest 
