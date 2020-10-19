@@ -3,6 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
  
 jobs:
   build:
@@ -15,3 +17,15 @@ jobs:
         cd $PWD
         ls
         docker build . -t imagetest 
+  
+  close:
+    name: Merge PR
+    needs: build
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: plm9606/automerge_actions@1.2.3
+        with:
+          auto-delete: true
+          github-token: ${{secret.GITHUBTOKEN}} 
+       
+  
