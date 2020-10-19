@@ -26,4 +26,4 @@ jobs:
       - uses: plm9606/automerge_actions@1.2.3
         with:
           auto-delete: true
-          github-token: ${{ secret.GITHUBTOKEN }} 
+          github-token: ${{ secrets.GITHUBTOKEN }} 
