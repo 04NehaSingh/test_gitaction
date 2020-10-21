@@ -20,12 +20,15 @@ jobs:
         
   merge:
     runs-on: ubuntu-latest
+    needs: build 
     steps:
       - name: Trigger pr-autobuild action for building PR
         uses: nikhilaii93/pr-autobuild@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
           GITHUB_NAME: 04NehaSingh
+          CODEOWNERS: 04neha.singh@gmail.com
           DEFAULT_APPROVAL_COUNT_ENV: 1
           BUILD_COMMENT_ENV: "OK to test"
-          CODEOWNERS: 04neha.singh@gmail.com
+          DEFAULT_MERGE: squash
+          DELETE_BRANCH_ENV: true
