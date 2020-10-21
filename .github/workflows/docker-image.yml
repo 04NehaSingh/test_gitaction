@@ -27,7 +27,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
           GITHUB_NAME: 04NehaSingh
+          CODEOWNERS: 04neha.singh@gmail.com
           DEFAULT_APPROVAL_COUNT_ENV: 1
           BUILD_COMMENT_ENV: "OK to test"
-          DELETE_BRANCH: true
-          CODEOWNERS: 04neha.singh@gmail.com
+          DEFAULT_MERGE: squash
+          DELETE_BRANCH_ENV: true
