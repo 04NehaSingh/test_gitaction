@@ -27,4 +27,6 @@ jobs:
           env | grep GITHUB_REF 
           pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           echo $pull_number
+          mrg = $(hub merge http://github.com/jingweno/gh/pull/${pull};echo $?)
+          echo $mrg
           echo "End.........."
