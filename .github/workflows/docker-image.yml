@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Auto-Merge PR
         run: |
-          echo GITHUB_REF
+          echo env | grep GITHUB_REF
           pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-          echo pull_number
+          echo $pull_number
           echo "End.........."
