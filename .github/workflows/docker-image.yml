@@ -28,4 +28,3 @@ jobs:
           pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           echo $pull_number
           echo "End.........."
-          echo "from new PR"
