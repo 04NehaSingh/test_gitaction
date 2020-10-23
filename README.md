@@ -1,3 +1,3 @@
-# Test for github action (docker build)
+# Test for github action 
 
-# Test for PR merge
+# Test for PR merge close and delete branch
