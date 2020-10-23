@@ -25,7 +25,7 @@ jobs:
       - name: Auto-Merge PR
         env:
           GITHUB_TOKEN: GITHUBTOKEN
-          PR_NUMBER: ${{github.event.pull_request.number}} 
+          PR_NUMBER: ${{github.event.pull_request.number}}
         run: |
           env | grep GITHUB_REF 
           echo ${{PR_NUMBER}}
