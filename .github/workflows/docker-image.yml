@@ -28,7 +28,6 @@ jobs:
           PR_NUMBER: ${{github.event.pull_request.number}}
         run: |
           env | grep GITHUB_REF 
-          echo ${{PR_NUMBER}}
           pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           echo $pull_number
           hub merge http://github.com/test_gitaction/pull/${pull}
