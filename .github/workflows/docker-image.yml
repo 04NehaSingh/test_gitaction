@@ -30,6 +30,6 @@ jobs:
           env | grep GITHUB_REF 
           pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           echo $pull_number
-          hub merge http://github.com/test_gitaction/pull/${pull}
-          https://github.com/04NehaSingh/test_gitaction/pull/7#issue-508306547
+          #hub merge http://github.com/test_gitaction/pull/${pull}
+          #https://github.com/04NehaSingh/test_gitaction/pull/7#issue-508306547
           echo "End.........."
