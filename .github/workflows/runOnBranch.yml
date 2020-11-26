@@ -1,0 +1,17 @@
+Name: Run on neha branch
+
+on:
+  push:
+    branches: [ neha ]
+  pull_request:
+    branches: [ master ]
+
+job:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install -g bats
+      - run: bats -v
+      
